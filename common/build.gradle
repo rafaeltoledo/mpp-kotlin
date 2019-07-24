@@ -1,0 +1,73 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'org.jetbrains.kotlin.native.cocoapods'
+apply plugin: 'com.android.library'
+
+version = '1.0'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.1'
+}
+
+kotlin {
+    targets {
+        android('android')
+
+        def buildForDevice = project.findProperty('kotlin.native.cocoapods.target') == 'ios_arm'
+        if (buildForDevice) {
+            iosArm64('iOS64')
+            iosArm32('iOS32')
+
+            def iOSMain = sourceSets.creating
+            sourceSets['iOS64Main'].dependsOn(iOSMain)
+            sourceSets['iOS32Main'].dependsOn(iOSMain)
+        } else {
+            iosX64('ios')
+        }
+    }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib-common:$versions.kotlin"
+            }
+        }
+
+        commonTest {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-test-common:$versions.kotlin"
+                implementation "org.jetbrains.kotlin:kotlin-test-annotations-common:$versions.kotlin"
+            }
+        }
+
+        androidMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+            }
+        }
+
+        androidTest {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-test:$versions.kotlin"
+                implementation "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+            }
+        }
+
+        iosMain {
+            dependencies {
+
+            }
+        }
+
+        iosTest {
+            dependencies {
+
+            }
+        }
+    }
+
+    cocoapods {
+        summary = 'Common library made with Kotlin'
+        homepage = 'https://github.com/rafaeltoledo/mpp-kotlin'
+    }
+}
