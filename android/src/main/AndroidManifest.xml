@@ -2,8 +2,10 @@
 <manifest package="net.rafaeltoledo.kotlin"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.listing.ListingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

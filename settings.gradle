@@ -2,3 +2,4 @@ rootProject.name = 'kotlin'
 
 include ':android', ':common'
 
+enableFeaturePreview 'GRADLE_METADATA'

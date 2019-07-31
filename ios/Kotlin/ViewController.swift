@@ -8,7 +8,6 @@ class ViewController: UIViewController {
 
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = .gray
         self.view = view
     }
 
@@ -16,9 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.addSubview(box)
+        box.textAlignment = .center
         box.snp.makeConstraints { (make) -> Void in
-            make.width.height.equalTo(150)
-            make.center.equalTo(self.view)
+            make.width.equalTo(self.view.bounds.width)
+            make.height.equalTo(self.view.bounds.height)
+            //make.top.equalTo(self.view.safeAreaInsets.top)
         }
 
         let x = Proxy().proxyHello()

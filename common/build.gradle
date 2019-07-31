@@ -1,5 +1,6 @@
 apply plugin: 'org.jetbrains.kotlin.multiplatform'
 apply plugin: 'org.jetbrains.kotlin.native.cocoapods'
+apply plugin: 'kotlinx-serialization'
 apply plugin: 'com.android.library'
 
 version = '1.0'
@@ -30,6 +31,9 @@ kotlin {
         commonMain {
             dependencies {
                 implementation "org.jetbrains.kotlin:kotlin-stdlib-common:$versions.kotlin"
+                implementation "io.ktor:ktor-client-core:$versions.ktor"
+                implementation "io.ktor:ktor-client-json:$versions.ktor"
+                implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$versions.serialization"
             }
         }
 
@@ -43,6 +47,10 @@ kotlin {
         androidMain {
             dependencies {
                 implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+                implementation "io.ktor:ktor-client-core-jvm:$versions.ktor"
+                implementation "io.ktor:ktor-client-okhttp:$versions.ktor"
+                implementation "io.ktor:ktor-client-json-jvm:$versions.ktor"
+                implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$versions.serialization"
             }
         }
 
@@ -55,7 +63,10 @@ kotlin {
 
         iosMain {
             dependencies {
-
+                implementation "io.ktor:ktor-client-ios:$versions.ktor"
+                implementation "io.ktor:ktor-client-core-native:$versions.ktor"
+                implementation "io.ktor:ktor-client-json-native:$versions.ktor"
+                implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$versions.serialization"
             }
         }
 

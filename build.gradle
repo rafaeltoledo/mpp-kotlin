@@ -1,8 +1,10 @@
 buildscript {
 
     ext.versions = [
-            'agp'   : '3.4.2',
-            'kotlin': '1.3.41',
+            'agp'          : '3.4.2',
+            'kotlin'       : '1.3.41',
+            'ktor'         : '1.2.2',
+            'serialization': '0.11.1',
     ]
 
     repositories {
@@ -15,6 +17,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$versions.agp"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$versions.kotlin"
     }
 }
 
