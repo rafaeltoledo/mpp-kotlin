@@ -6,7 +6,7 @@ import net.rafaeltoledo.kotlin.network.RedditClient
 
 object RedditRepository {
 
-    suspend fun fetch(subreddit: String = "frontpage"): Listing {
+    suspend fun fetch(subreddit: String = "kotlin"): Listing {
         val response = RedditClient.fetchSubreddit(subreddit)
         return Json.parse(Listing.serializer(), response)
     }
