@@ -22,9 +22,10 @@ class ListingAdapter : RecyclerView.Adapter<ViewHolder>() {
     override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val topic = items[position]
-        holder.title.text = topic.title
-        holder.author.text = topic.subreddit
+        items[position].run {
+            holder.title.text = title
+            holder.author.text = subreddit
+        }
     }
 
     fun add(listing: Listing) {

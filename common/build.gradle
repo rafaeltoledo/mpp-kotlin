@@ -35,9 +35,6 @@ kotlin {
                 implementation "io.ktor:ktor-client-json:$versions.ktor"
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$versions.serialization"
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$versions.coroutines"
-
-                // Under evaluation
-                implementation 'com.autodesk:coroutineworker:0.3.1'
             }
         }
 
