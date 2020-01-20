@@ -2,9 +2,9 @@ buildscript {
 
     ext.versions = [
             'agp'          : '3.5.3',
-            'coroutines'   : '1.3.2',
+            'coroutines'   : '1.3.3',
             'kotlin'       : '1.3.61',
-            'ktor'         : '1.2.6',
+            'ktor'         : '1.3.0',
             'serialization': '0.14.0',
     ]
 
