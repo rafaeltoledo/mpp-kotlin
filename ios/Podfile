@@ -4,8 +4,8 @@ platform :ios, '10.0'
 target 'Kotlin' do
   use_frameworks!
 
-  pod 'MaterialComponents'
-  pod 'Kingfisher'
+  pod 'MaterialComponents', '~> 103.1.0'
+  pod 'Kingfisher', '~> 5.13.0'
   pod 'SnapKit', '~> 5.0.1'
   pod 'common', :path => '../common'
 
