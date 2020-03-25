@@ -7,7 +7,7 @@ version = '1.0'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    buildToolsVersion '29.0.3'
 }
 
 kotlin {
@@ -69,7 +69,7 @@ kotlin {
                 implementation "io.ktor:ktor-client-core-native:$versions.ktor"
                 implementation "io.ktor:ktor-client-json-native:$versions.ktor"
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$versions.serialization"
-                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$versions.coroutines"
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${versions.coroutines}-native-mt"
             }
         }
 
