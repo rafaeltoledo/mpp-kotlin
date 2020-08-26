@@ -33,12 +33,14 @@ class ViewController: UITableViewController {
             tableview.leftAnchor.constraint(equalTo: self.view.leftAnchor)
         ])
         
-        RedditRepository().fetch(subreddit: "kotlin", completion: {
-            self.listing.append(contentsOf: $0.children)
-            DispatchQueue.main.async {
-               self.tableView.reloadData()
+        RedditRepository().fetch(subreddit: "kotlin") { data, error in
+            if let content = data {
+                self.listing.append(contentsOf: content.children)
+                DispatchQueue.main.async {
+                   self.tableView.reloadData()
+                }
             }
-        })
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
