@@ -1,8 +1,12 @@
 import SnapKit
 import UIKit
 import common
+import RxSwift
 
 class ViewController: UITableViewController {
+    
+    let disposeBag = DisposeBag()
+    var viewModel = ListingViewModel()
     
     var listing = [Topic]()
     
@@ -16,6 +20,14 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        
+        viewModel.listing
+            .subscribe { event in
+                self.listing.append(contentsOf: event.element!.children)
+                self.tableView.reloadData()
+            }.disposed(by: disposeBag)
+        
+        viewModel.fetch()
     }
     
     func setupTableView() {
@@ -33,14 +45,7 @@ class ViewController: UITableViewController {
             tableview.leftAnchor.constraint(equalTo: self.view.leftAnchor)
         ])
         
-        RedditRepository().fetch(subreddit: "kotlin") { data, error in
-            if let content = data {
-                self.listing.append(contentsOf: content.children)
-                DispatchQueue.main.async {
-                   self.tableView.reloadData()
-                }
-            }
-        }
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

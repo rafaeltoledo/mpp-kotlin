@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		084C092266D1701FDB044912 /* Pods_Kotlin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E67D64E72E6F492C5C5F36 /* Pods_Kotlin.framework */; };
 		186FD43DBFFCB3AD23DB3D6B /* Pods_KotlinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AA2C94CB053788924D697B /* Pods_KotlinTests.framework */; };
+		671198A924F761BA0042435F /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671198A824F761BA0042435F /* ListingViewModel.swift */; };
 		742D20FB23EDC534D878CA90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D26BB2E1477812E7A39AE /* AppDelegate.swift */; };
 		742D271126999D4E61562FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D2CC500CDE6EEB0ACA01C /* ViewController.swift */; };
 		742D276561BC405B0EB84F9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742D29227706CC010B6C4F07 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		3CA0D263C54B66BC6ABCCA58 /* Pods-KotlinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotlinUITests.debug.xcconfig"; path = "Target Support Files/Pods-KotlinUITests/Pods-KotlinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		671198A824F761BA0042435F /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
 		742D2126D6DB509F0884DD25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		742D23AF041BA05EABDB942A /* KotlinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KotlinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		742D24A4F5B032CCBED0F254 /* KotlinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KotlinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				742D26BB2E1477812E7A39AE /* AppDelegate.swift */,
 				742D2C29539A30E5EC3BF43F /* Main.storyboard */,
 				742D2CC500CDE6EEB0ACA01C /* ViewController.swift */,
+				671198A824F761BA0042435F /* ListingViewModel.swift */,
 			);
 			path = Kotlin;
 			sourceTree = "<group>";
@@ -323,6 +326,9 @@
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -333,6 +339,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +402,7 @@
 			files = (
 				742D20FB23EDC534D878CA90 /* AppDelegate.swift in Sources */,
 				742D271126999D4E61562FFC /* ViewController.swift in Sources */,
+				671198A924F761BA0042435F /* ListingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
