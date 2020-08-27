@@ -5,8 +5,13 @@ A mobile client for Reddit that runs on Android and iOS.
 
 ![Build](https://github.com/rafaeltoledo/mpp-kotlin/workflows/CI/badge.svg)
 
+Screenshots
+===========
+
+![ios.png](screenshots/ios.png) ![android.png](screenshots/android.png)
+
 Building
---------
+========
 
 Prerequisites:
 
