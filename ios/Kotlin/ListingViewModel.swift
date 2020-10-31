@@ -13,12 +13,14 @@ import common
 
 class ListingViewModel {
     
-    private let _listing = PublishRelay<Listing>()
+    private let _listing = PublishSubject<Listing>()
     
     func fetch() {
         RedditRepository().fetch(subreddit: "kotlin") { data, error in
             if let content = data {
-                self._listing.accept(content)
+                self._listing.onNext(content)
+            } else if let error = error {
+                self._listing.onError(error)
             }
         }
     }

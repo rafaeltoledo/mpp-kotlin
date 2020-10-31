@@ -10,7 +10,7 @@ class ViewController: UITableViewController {
     
     var listing = [Topic]()
     
-    let tableview: UITableView = {
+    lazy var tableview: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = UIColor.white
         tv.translatesAutoresizingMaskIntoConstraints = false
@@ -20,12 +20,13 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        title = "Kotlin Native Example"
         
         viewModel.listing
-            .subscribe { event in
-                self.listing.append(contentsOf: event.element!.children)
+            .subscribe(onNext: { listing in
+                self.listing = listing.children
                 self.tableView.reloadData()
-            }.disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         
         viewModel.fetch()
     }
@@ -45,7 +46,6 @@ class ViewController: UITableViewController {
             tableview.leftAnchor.constraint(equalTo: self.view.leftAnchor)
         ])
         
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,6 +55,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
         cell.textLabel?.text = self.listing[indexPath.row].title
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
 }
