@@ -20,7 +20,19 @@ Prerequisites:
  * XCode and its command line tools
  * Android SDK unzipped and `ANDROID_HOME` environment variable set to its path.
  * Ruby and [Cocoapods](https://cocoapods.org)
- 
+
+How to run:
+
+* Open Root project in Android Studio / InteliJ and compile `common` module
+
+* To run the **Android** app, just navigate to Android module in Android Studio, build and run
+* To run **iOS**
+   - After compiling `common`, open the terminal in `/ios` folder and run
+   ```
+   pod install
+   ```
+   - After finishing installing, open `Kotlin.xcworkspace`, build and run.
+
 License
 =======
 
