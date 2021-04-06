@@ -12,7 +12,11 @@ import kotlin.native.concurrent.ThreadLocal
 object RedditClient {
 
     private const val API_HOST = "https://api.reddit.com"
-    private val nonStrictJson = Json { isLenient = true; ignoreUnknownKeys = true }
+
+    private val nonStrictJson = Json {
+        isLenient = true
+        ignoreUnknownKeys = true
+    }
 
     private val client = HttpClient {
         install(JsonFeature) {

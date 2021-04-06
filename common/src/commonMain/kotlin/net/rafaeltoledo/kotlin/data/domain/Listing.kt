@@ -28,8 +28,8 @@ object ListingSerializer : KSerializer<Listing> {
             return Listing(
                 it.getValue("modhash").jsonPrimitive.content,
                 it.getValue("dist").jsonPrimitive.int,
-                it.getValue("children").jsonArray.map {
-                    Json.decodeFromString(Topic.serializer(), it.toString())
+                it.getValue("children").jsonArray.map { innerJson ->
+                    Json.decodeFromString(Topic.serializer(), innerJson.toString())
                 },
                 it.getValue("after").jsonPrimitive.contentOrNull,
                 it.getValue("before").jsonPrimitive.contentOrNull
